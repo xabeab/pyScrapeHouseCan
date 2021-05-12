@@ -21,7 +21,7 @@ class Ad:
     """
     def parse_with_soup(self) -> None:
         response = requests.get(self.url)
-        self.soup = BeautifulSoup(response.content, 'html5lib')
+        self.soup = BeautifulSoup(response.content, 'lxml')
 
     def print_attributes(self) -> None:
 

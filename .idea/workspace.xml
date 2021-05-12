@@ -19,12 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6868918-5233-41d2-9c3b-dc6e6d76dbb5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ad.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/developAd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Marketplace_scraper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Marketplace_scraper.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d6868918-5233-41d2-9c3b-dc6e6d76dbb5" name="Default Changelist" comment="Implement the Ad class which in the end will extract the pertinent information for a given ad. For now the init methods use a URL and extract some information from the URL. The method parse_with_soup request and parse the html page using the URL. &#10;The file developAd.py is temporary and is just to figure out how to access information for a given ad.">
+      <change afterPath="$PROJECT_DIR$/PageParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ad.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ad.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/developAd.py" beforeDir="false" afterPath="$PROJECT_DIR$/developAd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +140,14 @@
       <option name="presentableId" value="Default" />
       <updated>1619389320292</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implement the Ad class which in the end will extract the pertinent information for a given ad. For now the init methods use a URL and extract some information from the URL. The method parse_with_soup request and parse the html page using the URL. &#10;The file developAd.py is temporary and is just to figure out how to access information for a given ad.">
+      <created>1619746242434</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619746242434</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,35 +162,47 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement the Ad class which in the end will extract the pertinent information for a given ad. For now the init methods use a URL and extract some information from the URL. The method parse_with_soup request and parse the html page using the URL. &#10;The file developAd.py is temporary and is just to figure out how to access information for a given ad." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement the Ad class which in the end will extract the pertinent information for a given ad. For now the init methods use a URL and extract some information from the URL. The method parse_with_soup request and parse the html page using the URL. &#10;The file developAd.py is temporary and is just to figure out how to access information for a given ad." />
+  </component>
   <component name="WindowStateProjectService">
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1619699489295">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1619699489295" />
-    <state x="1036" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1619740109899">
+    <state x="1036" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1619972951578">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1036" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1619740109899" />
-    <state width="2539" height="401" key="GridCell.Tab.0.bottom" timestamp="1619739417690">
+    <state x="1036" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1619972951578" />
+    <state x="482" y="455" key="FileChooserDialogImpl" timestamp="1620142048769">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1619739417690" />
-    <state width="2539" height="401" key="GridCell.Tab.0.center" timestamp="1619739417690">
+    <state x="482" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1620142048769" />
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom" timestamp="1620776515033">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1619739417690" />
-    <state width="2539" height="401" key="GridCell.Tab.0.left" timestamp="1619739417690">
+    <state width="2539" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1620776515033" />
+    <state width="2539" height="401" key="GridCell.Tab.0.center" timestamp="1620776515033">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1619739417690" />
-    <state width="2539" height="401" key="GridCell.Tab.0.right" timestamp="1619739417690">
+    <state width="2539" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1620776515033" />
+    <state width="2539" height="401" key="GridCell.Tab.0.left" timestamp="1620776515033">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1619739417690" />
+    <state width="2539" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1620776515033" />
+    <state width="2539" height="401" key="GridCell.Tab.0.right" timestamp="1620776515033">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1620776515033" />
     <state x="781" y="345" key="SettingsEditor" timestamp="1619700157811">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1619700157811" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1619746287342">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1619746287342" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1619646886057">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
