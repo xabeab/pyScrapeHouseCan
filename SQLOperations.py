@@ -46,7 +46,8 @@ class SQLOperations:
 
     def __init__(self) -> None:
 
-        self.key_path = 'kijijidatabase-6414a390d2b7.json'
+
+        self.key_path = os.path.join('secret', 'kijijidatabase-dev.json')
 
         self.credentials = service_account.Credentials.from_service_account_file(self.key_path,
                                                                                   scopes=["https://www.googleapis.com/auth/cloud-platform"]

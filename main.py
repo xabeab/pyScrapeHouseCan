@@ -55,5 +55,7 @@ if __name__ == "__main__":
     # Convert other column to proper schema
     df = df.astype(df_existing.dtypes)
 
+    print(f'Appending {df.shape[0]} new adds to adds_detail table')
+
     # Update remote db with new adds
     pandas_gbq.to_gbq(df, 'adds.adds_detail', project_id=sql_ops.project_id, if_exists='append')
