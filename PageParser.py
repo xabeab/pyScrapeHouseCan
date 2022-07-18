@@ -3,6 +3,7 @@ import re
 from datetime import datetime
 import numpy as np
 import pandas as pd
+import requests
 
 
 def parse_from_search_item(item):
@@ -75,6 +76,47 @@ def parse_from_search_items(items):
     df = pd.DataFrame(lst_se)
 
     return df
+
+
+def parse_kijiji(url: str) -> pd.DataFrame:
+
+    website = 'https://www.kijiji.ca'
+
+    lst_df = list()
+    i = 0
+    while (True):
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, 'html5lib')
+
+        i += 1
+
+        items = soup.find_all("div", {"class", "search-item"})
+
+        temp_df = parse_from_search_items(items)
+
+        lst_df.append(temp_df)
+        print('nb of rental: ' + str(temp_df.shape[0]))
+        print('average price: ' + str(temp_df['price'].mean()))
+
+        if (i > 4):
+            break
+
+        try:
+            url = website + soup.find(title="Suivante").get('href')
+        except:
+            break
+
+    df = pd.concat(lst_df)
+
+    now = pd.Timestamp.now()
+
+    df['first_extracted'] = now
+    df['last_extracted'] = now
+
+    # df['time_open'] = df['first_extracted'] - df['last_extracted']
+
+    return df
+
 
 
 
